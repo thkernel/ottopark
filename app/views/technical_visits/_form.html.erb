@@ -1,0 +1,62 @@
+<%= form_with(model: technical_visit, local: true) do |form| %>
+  <% if technical_visit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(technical_visit.errors.count, "error") %> prohibited this technical_visit from being saved:</h2>
+
+      <ul>
+      <% technical_visit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :vehicule_id %>
+    <%= form.text_field :vehicule_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.datetime_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.datetime_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pre_tax_amount %>
+    <%= form.text_field :pre_tax_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vat_rate %>
+    <%= form.text_field :vat_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount_including_tax %>
+    <%= form.text_field :amount_including_tax %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  insurer: one
+  vehicule: one
+  start_date: 2020-11-08 10:20:43
+  end_date: 2020-11-08 10:20:43
+  insurance_number: MyString
+  pre_tax_amount: 1.5
+  vat_rate: 1.5
+  amount_including_tax: 1.5
+  status: MyString
+  user: one
+
+two:
+  insurer: two
+  vehicule: two
+  start_date: 2020-11-08 10:20:43
+  end_date: 2020-11-08 10:20:43
+  insurance_number: MyString
+  pre_tax_amount: 1.5
+  vat_rate: 1.5
+  amount_including_tax: 1.5
+  status: MyString
+  user: two

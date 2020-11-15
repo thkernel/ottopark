@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @vehicule_brand.uid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vehicule_brand.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @vehicule_brand.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @vehicule_brand.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vehicule_brand.user %>
+</p>
+
+<%= link_to 'Edit', edit_vehicule_brand_path(@vehicule_brand) %> |
+<%= link_to 'Back', vehicule_brands_path %>

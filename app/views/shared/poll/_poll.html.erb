@@ -1,0 +1,50 @@
+ <div class="card">
+    <div class="card-body">
+        <div class="card-thumbnail">
+            <%= link_to poll_show_path(poll) do %>
+                <%= poll_thumbnail(poll) %>
+            <% end %>
+        </div>
+        <div class="card-title">
+            <h5> <%= link_to poll.title, poll_show_path(poll) %>  </h5>                         
+        </div>
+            
+        <div class="label-wrap label-right hide-on-list">
+            <span class="label-status label-status-7 label label-default">
+                <%= poll.status %>
+            </span>
+            <span class="label label-default status-<%= poll.status %>">
+                
+                <%= poll.poll_category.name %>
+
+            </span>                    
+        </div>
+       <div class="poll-excerpt">
+            
+            <%= Sanitize.fragment(poll.content.truncate_words(35, omission: '...')) %>
+
+        </div>
+        
+        <div class="item-footer">
+            <!--
+            <div class="item-date">
+                
+                    <i class="fa fa-calendar"></i>
+                <%= time_ago_in_words(poll.created_at) %>
+                
+            </div>-->
+
+            <div class="item-author">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <%= poll.user.profile.full_name%>
+            </div>
+           
+             <div class="item-view pull-right">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                <%= poll.views.count %>
+            </div>
+        </div>
+        
+            
+    </div>
+</div>

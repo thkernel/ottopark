@@ -1,0 +1,36 @@
+ <div class="card">
+    <div class="card-body">
+        <div class="card-thumbnail">
+            <%= link_to poll_item_show_path(poll_item) do %>
+                <%= poll_item_thumbnail(poll_item) %>
+            <% end %>
+        </div>
+        <div class="card-title">
+            <h5> <%= link_to poll_item.title, poll_item_show_path(poll_item) %>  </h5>                         
+        </div>
+            
+       
+        <div class="poll_item-excerpt">
+            
+            <%= Sanitize.fragment(poll_item.content.truncate_words(35, omission: '...')) %>
+
+        </div>	
+       
+        
+        <div class="item-footer">
+            
+
+            <div class="item-author">
+                <%= link_to raw("<i class='fa fa-comments-o' aria-hidden='true'></i> #{poll_item.comments.count}"), poll_item_show_path(poll_item) %>
+                 
+            </div>
+           
+             <div class="item-view pull-right">
+                <%= link_to raw("<i class='fa fa-heart-o' aria-hidden='true'></i> #{poll_item.votings.count}"), poll_item_show_path(poll_item) %>
+ 
+            </div>
+        </div>
+        
+            
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @odometer.uid %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @odometer.vehicle %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @odometer.driver %>
+</p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @odometer.mileage %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @odometer.unit %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @odometer.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @odometer.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @odometer.user %>
+</p>
+
+<%= link_to 'Edit', edit_odometer_path(@odometer) %> |
+<%= link_to 'Back', odometers_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  motif: MyString
+  vehicule: one
+  departure: MyString
+  arrival: MyString
+  description: MyText
+  status: MyString
+  user: one
+
+two:
+  motif: MyString
+  vehicule: two
+  departure: MyString
+  arrival: MyString
+  description: MyText
+  status: MyString
+  user: two

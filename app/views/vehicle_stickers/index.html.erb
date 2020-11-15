@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vehicle Stickers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vehicule</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Reference</th>
+      <th>Pre tax amount</th>
+      <th>Vat rate</th>
+      <th>Amount including tax</th>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicle_stickers.each do |vehicle_sticker| %>
+      <tr>
+        <td><%= vehicle_sticker.vehicule %></td>
+        <td><%= vehicle_sticker.start_date %></td>
+        <td><%= vehicle_sticker.end_date %></td>
+        <td><%= vehicle_sticker.reference %></td>
+        <td><%= vehicle_sticker.pre_tax_amount %></td>
+        <td><%= vehicle_sticker.vat_rate %></td>
+        <td><%= vehicle_sticker.amount_including_tax %></td>
+        <td><%= vehicle_sticker.status %></td>
+        <td><%= vehicle_sticker.user %></td>
+        <td><%= link_to 'Show', vehicle_sticker %></td>
+        <td><%= link_to 'Edit', edit_vehicle_sticker_path(vehicle_sticker) %></td>
+        <td><%= link_to 'Destroy', vehicle_sticker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle Sticker', new_vehicle_sticker_path %>

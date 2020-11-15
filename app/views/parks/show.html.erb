@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @park.uid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @park.name %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @park.capacity %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @park.address %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @park.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @park.city %>
+</p>
+
+<p>
+  <strong>Manager:</strong>
+  <%= @park.manager %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @park.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @park.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @park.user %>
+</p>
+
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'Back', parks_path %>

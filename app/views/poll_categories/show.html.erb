@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @poll_category.uid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @poll_category.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @poll_category.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @poll_category.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @poll_category.user %>
+</p>
+
+<%= link_to 'Edit', edit_poll_category_path(@poll_category) %> |
+<%= link_to 'Back', poll_categories_path %>

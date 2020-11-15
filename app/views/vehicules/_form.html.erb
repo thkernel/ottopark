@@ -1,0 +1,82 @@
+<%= form_with(model: vehicule, local: true) do |form| %>
+  <% if vehicule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicule.errors.count, "error") %> prohibited this vehicule from being saved:</h2>
+
+      <ul>
+      <% vehicule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :uid %>
+    <%= form.text_field :uid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehicule_type_id %>
+    <%= form.text_field :vehicule_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehicule_brand_id %>
+    <%= form.text_field :vehicule_brand_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehicule_model %>
+    <%= form.text_field :vehicule_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chassis_number %>
+    <%= form.text_field :chassis_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :immatriculation_number %>
+    <%= form.text_field :immatriculation_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacture_date %>
+    <%= form.datetime_select :manufacture_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mileage %>
+    <%= form.text_field :mileage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :statut %>
+    <%= form.text_field :statut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :geographic_location %>
+    <%= form.text_field :geographic_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

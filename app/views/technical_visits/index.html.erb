@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Technical Visits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vehicule</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Reference</th>
+      <th>Pre tax amount</th>
+      <th>Vat rate</th>
+      <th>Amount including tax</th>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @technical_visits.each do |technical_visit| %>
+      <tr>
+        <td><%= technical_visit.vehicule %></td>
+        <td><%= technical_visit.start_date %></td>
+        <td><%= technical_visit.end_date %></td>
+        <td><%= technical_visit.reference %></td>
+        <td><%= technical_visit.pre_tax_amount %></td>
+        <td><%= technical_visit.vat_rate %></td>
+        <td><%= technical_visit.amount_including_tax %></td>
+        <td><%= technical_visit.status %></td>
+        <td><%= technical_visit.user %></td>
+        <td><%= link_to 'Show', technical_visit %></td>
+        <td><%= link_to 'Edit', edit_technical_visit_path(technical_visit) %></td>
+        <td><%= link_to 'Destroy', technical_visit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Technical Visit', new_technical_visit_path %>

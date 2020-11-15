@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @expense_type.uid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @expense_type.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @expense_type.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @expense_type.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @expense_type.user %>
+</p>
+
+<%= link_to 'Edit', edit_expense_type_path(@expense_type) %> |
+<%= link_to 'Back', expense_types_path %>

@@ -1,0 +1,21 @@
+<section class="featured-polls">
+    <div class="container">
+        <div class="heading-text heading-section text-center">
+            <h3>Sondages récents</h3>
+        </div>
+       <div class="row">
+
+		<% @polls.each do |poll| %>
+
+            <div class="col-md-3 poll-item mg-t-20">	
+               <%= render "shared/poll/poll" , poll: poll %>
+			</div>
+		<% end %> 
+	</div>
+
+	<div class="row load-more">
+		<%= will_paginate @polls, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails, class: "pagination load-more-button" %> 
+	</div>
+       
+    </div>
+</section>

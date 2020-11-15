@@ -1,0 +1,25 @@
+<% @polls.each do |poll| %>
+    <tr>
+   <td><%= poll.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= poll.poll_category.name %></td>
+    <td><%= poll.title %></td>
+    <td><%= poll.start_date.strftime("%d/%m/%Y") %></td>
+     <td><%= poll.end_date.strftime("%d/%m/%Y") %></td>
+    <td><%= poll.status %></td>
+    <td>
+	    <div class="action-buttons">
+            <%= link_to raw('<i class="fa fa-list-alt" aria-hidden="true"></i>'), poll_items_path(uid: poll.uid), title: "Liste des questions" %>
+
+                <%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+                    
+'),  edit_poll_path(poll), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), poll_delete_path(poll), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

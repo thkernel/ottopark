@@ -1,0 +1,19 @@
+<% @poll_categories.each do |poll_category| %>
+    <tr>
+    
+    <td><%= poll_category.name %></td>
+   
+   <td>
+					<div class="action-buttons">
+					<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'),  edit_poll_category_path(poll_category), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), poll_category_delete_path(poll_category), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

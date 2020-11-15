@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Motif:</strong>
+  <%= @shifting.motif %>
+</p>
+
+<p>
+  <strong>Vehicule:</strong>
+  <%= @shifting.vehicule %>
+</p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @shifting.departure %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @shifting.arrival %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shifting.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @shifting.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shifting.user %>
+</p>
+
+<%= link_to 'Edit', edit_shifting_path(@shifting) %> |
+<%= link_to 'Back', shiftings_path %>

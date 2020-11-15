@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Maintenance type:</strong>
+  <%= @maintenance.maintenance_type %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @maintenance.uid %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @maintenance.fee %>
+</p>
+
+<p>
+  <strong>Service provider:</strong>
+  <%= @maintenance.service_provider %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @maintenance.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @maintenance.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @maintenance.user %>
+</p>
+
+<%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
+<%= link_to 'Back', maintenances_path %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Odometers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uid</th>
+      <th>Vehicle</th>
+      <th>Driver</th>
+      <th>Mileage</th>
+      <th>Unit</th>
+      <th>Status</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @odometers.each do |odometer| %>
+      <tr>
+        <td><%= odometer.uid %></td>
+        <td><%= odometer.vehicle %></td>
+        <td><%= odometer.driver %></td>
+        <td><%= odometer.mileage %></td>
+        <td><%= odometer.unit %></td>
+        <td><%= odometer.status %></td>
+        <td><%= odometer.description %></td>
+        <td><%= odometer.user %></td>
+        <td><%= link_to 'Show', odometer %></td>
+        <td><%= link_to 'Edit', edit_odometer_path(odometer) %></td>
+        <td><%= link_to 'Destroy', odometer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Odometer', new_odometer_path %>

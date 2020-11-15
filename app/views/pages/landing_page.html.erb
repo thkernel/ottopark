@@ -1,0 +1,51 @@
+
+
+
+
+
+<body class="hold-transition lockscreen">
+<!-- Automatic element centering -->
+<div class="lockscreen-wrapper">
+  <div class="lockscreen-logo">
+    <%= render('devise/shared/logo') %>
+  </div>
+  <!-- User name -->
+<div class="help-block text-center">
+	Entrer votre adresse E-mail pour recuperer votre mot de passe!
+  </div>
+  <!-- START LOCK SCREEN ITEM -->
+  <div class="lockscreen-item">
+    <!-- lockscreen image -->
+   
+    <!-- /.lockscreen-image -->
+      <!-- /.lockscreen-item -->
+  
+
+
+    <!-- lockscreen credentials (contains the form) -->
+    <%= form_tag("", class: "lockscreen-credentials") do |f| %>
+
+      <div class="input-group">
+        <!-- <input type="password" class="form-control" placeholder="password"> -->
+		<%= email_field_tag :email, nil, class: "form-control",  placeholder: "Email" %>
+        <div class="input-group-btn">
+        
+         <%= submit_tag "Envoyer", class: "btn bg-purple" %>
+         <!--  <button type="button" class="btn"><i class="fa fa-arrow-right text-muted"></i></button> -->
+        </div>
+      </div>
+    <% end %>
+    <!-- /.lockscreen credentials -->
+
+  </div>
+  <div class="text-center">
+   <div>Ou se connecter avec un autre compte?</div>
+   
+  </div>
+  <div class="lockscreen-footer text-center">
+    Copyright &copy; 2017 <b><a href="http://imofy.xyz" class="text-black">Imofy.</a></b>
+    All rights reserved
+  </div>
+</div>
+<!-- /.center -->
+

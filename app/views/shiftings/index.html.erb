@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shiftings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Motif</th>
+      <th>Vehicule</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shiftings.each do |shifting| %>
+      <tr>
+        <td><%= shifting.motif %></td>
+        <td><%= shifting.vehicule %></td>
+        <td><%= shifting.departure %></td>
+        <td><%= shifting.arrival %></td>
+        <td><%= shifting.description %></td>
+        <td><%= shifting.status %></td>
+        <td><%= shifting.user %></td>
+        <td><%= link_to 'Show', shifting %></td>
+        <td><%= link_to 'Edit', edit_shifting_path(shifting) %></td>
+        <td><%= link_to 'Destroy', shifting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shifting', new_shifting_path %>

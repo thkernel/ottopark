@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @vehicule.uid %>
+</p>
+
+<p>
+  <strong>Vehicule type:</strong>
+  <%= @vehicule.vehicule_type %>
+</p>
+
+<p>
+  <strong>Vehicule brand:</strong>
+  <%= @vehicule.vehicule_brand %>
+</p>
+
+<p>
+  <strong>Vehicule model:</strong>
+  <%= @vehicule.vehicule_model %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @vehicule.serial_number %>
+</p>
+
+<p>
+  <strong>Chassis number:</strong>
+  <%= @vehicule.chassis_number %>
+</p>
+
+<p>
+  <strong>Immatriculation number:</strong>
+  <%= @vehicule.immatriculation_number %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @vehicule.color %>
+</p>
+
+<p>
+  <strong>Manufacture date:</strong>
+  <%= @vehicule.manufacture_date %>
+</p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @vehicule.mileage %>
+</p>
+
+<p>
+  <strong>Statut:</strong>
+  <%= @vehicule.statut %>
+</p>
+
+<p>
+  <strong>Geographic location:</strong>
+  <%= @vehicule.geographic_location %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vehicule.user %>
+</p>
+
+<%= link_to 'Edit', edit_vehicule_path(@vehicule) %> |
+<%= link_to 'Back', vehicules_path %>

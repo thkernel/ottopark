@@ -1,0 +1,18 @@
+<% if current_user.superuser? %>
+		<%= render "dashboard/partials/superuser-dashboard" %>
+	<% elsif current_user.commercial? %>
+		<%= render "dashboard/partials/commercial-dashboard" %>
+	<% elsif current_user.customer? %>
+		<%= render "dashboard/partials/customer-dashboard" %>
+	<% elsif current_user.member? %>
+		<%= render "dashboard/partials/member-dashboard" %>
+	<% elsif current_user.admin? %>
+		<%= render "dashboard/partials/admin-dashboard" %>
+	<% elsif current_user.visiteur? %>
+		<%= render "dashboard/partials/visiteur-dashboard" %>
+
+
+<% end %>
+
+
+

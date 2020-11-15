@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  maintenance_type: one
+  uid: MyString
+  fee: 1.5
+  service_provider: MyString
+  status: MyString
+  description: MyText
+  user: one
+
+two:
+  maintenance_type: two
+  uid: MyString
+  fee: 1.5
+  service_provider: MyString
+  status: MyString
+  description: MyText
+  user: two

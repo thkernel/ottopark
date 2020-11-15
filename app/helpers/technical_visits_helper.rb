@@ -1,0 +1,2 @@
+module TechnicalVisitsHelper
+end

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vehicules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uid</th>
+      <th>Vehicule type</th>
+      <th>Vehicule brand</th>
+      <th>Vehicule model</th>
+      <th>Serial number</th>
+      <th>Chassis number</th>
+      <th>Immatriculation number</th>
+      <th>Color</th>
+      <th>Manufacture date</th>
+      <th>Mileage</th>
+      <th>Statut</th>
+      <th>Geographic location</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicules.each do |vehicule| %>
+      <tr>
+        <td><%= vehicule.uid %></td>
+        <td><%= vehicule.vehicule_type %></td>
+        <td><%= vehicule.vehicule_brand %></td>
+        <td><%= vehicule.vehicule_model %></td>
+        <td><%= vehicule.serial_number %></td>
+        <td><%= vehicule.chassis_number %></td>
+        <td><%= vehicule.immatriculation_number %></td>
+        <td><%= vehicule.color %></td>
+        <td><%= vehicule.manufacture_date %></td>
+        <td><%= vehicule.mileage %></td>
+        <td><%= vehicule.statut %></td>
+        <td><%= vehicule.geographic_location %></td>
+        <td><%= vehicule.user %></td>
+        <td><%= link_to 'Show', vehicule %></td>
+        <td><%= link_to 'Edit', edit_vehicule_path(vehicule) %></td>
+        <td><%= link_to 'Destroy', vehicule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicule', new_vehicule_path %>

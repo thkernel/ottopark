@@ -1,0 +1,72 @@
+<div class="footer-one">
+	<div class="container navbar-fixed-bottom">
+		<div class="row">
+			<div class="col-md-4 footer-widget">
+				<h4 class="footer-widget-title">A propos</h4>
+				<p class="footer-widget-content">
+					<%= APPLICATION_DESCRIPTION %>
+				</p>
+			</div>
+			
+			<!-- Footer widget 3 -->
+			<div class="col-md-4 footer-widget">
+				<h4 class="footer-widget-title">Liens utiles</h4>
+				<div class="footer-widget-content">
+					<ul>
+						<li><%= link_to "A propos", about_us_path %></li>
+						<li><%= link_to "Contact", contact_path %></li>
+						<li><%= link_to "Comment ça marche?", how_it_work_path %></li>
+						<li><%= link_to "Publicité", advertise_path %></li>
+						<li><%= link_to "Partenaires", partnaires_path %></li>
+						
+					</ul>
+				</div>
+			</div><!-- end -->
+			
+			<!-- Footer widget 4 -->
+			<div class="col-md-4 footer-widget">
+				<h4 class="footer-widget-title"> </h4>
+				<div class="footer-widget-content">
+					<ul>
+						<li><%= link_to "Blog", blog_path %></li>
+						<li><%= link_to "Rejoignez-nous", join_us_path %></li>
+						<li><%= link_to "Conditions Générales d'Utilisation", cgu_path %></li>
+						<li><%= link_to "Politique de confidentialité", privacy_policy_path %></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 copyright">
+				&copy;<%= "#{Time.now.year} #{APPLICATION_NAME}" %>  - Tout droits réservés
+			</div>
+
+			<div class="col-md-6">
+				<div class="social-link">
+					<div class="text-center">
+	                
+	                
+	                <a href="https://www.facebook.com/imofy.official/" class="btn btn-social-icon btn-facebook" target="_blank"><i class="fa fa-facebook"></i>
+	                </a>
+	              
+	                
+	                <a href="https://plus.google.com/u/6/105575247260435852508" class="btn btn-social-icon btn-google" target="_blank"><i class="fa fa-google-plus"></i>
+	                </a>
+
+	                <a href="https://www.instagram.com/imofy.official/" class="btn btn-social-icon btn-instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+
+	                <a href="https://www.linkedin.com/in/imofy-job-a42b5714a/" class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+	               
+	                <a href="https://twitter.com/imofy_official" class="btn btn-social-icon btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+	                
+	              </div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+<%= render 'cookies_eu/consent_banner' %>

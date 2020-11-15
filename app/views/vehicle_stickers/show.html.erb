@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vehicule:</strong>
+  <%= @vehicle_sticker.vehicule %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @vehicle_sticker.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @vehicle_sticker.end_date %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @vehicle_sticker.reference %>
+</p>
+
+<p>
+  <strong>Pre tax amount:</strong>
+  <%= @vehicle_sticker.pre_tax_amount %>
+</p>
+
+<p>
+  <strong>Vat rate:</strong>
+  <%= @vehicle_sticker.vat_rate %>
+</p>
+
+<p>
+  <strong>Amount including tax:</strong>
+  <%= @vehicle_sticker.amount_including_tax %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @vehicle_sticker.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vehicle_sticker.user %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_sticker_path(@vehicle_sticker) %> |
+<%= link_to 'Back', vehicle_stickers_path %>

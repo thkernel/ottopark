@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Insurer:</strong>
+  <%= @insurance.insurer %>
+</p>
+
+<p>
+  <strong>Vehicule:</strong>
+  <%= @insurance.vehicule %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @insurance.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @insurance.end_date %>
+</p>
+
+<p>
+  <strong>Insurance number:</strong>
+  <%= @insurance.insurance_number %>
+</p>
+
+<p>
+  <strong>Pre tax amount:</strong>
+  <%= @insurance.pre_tax_amount %>
+</p>
+
+<p>
+  <strong>Vat rate:</strong>
+  <%= @insurance.vat_rate %>
+</p>
+
+<p>
+  <strong>Amount including tax:</strong>
+  <%= @insurance.amount_including_tax %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @insurance.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @insurance.user %>
+</p>
+
+<%= link_to 'Edit', edit_insurance_path(@insurance) %> |
+<%= link_to 'Back', insurances_path %>

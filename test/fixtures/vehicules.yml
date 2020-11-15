@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  vehicule_type: one
+  vehicule_brand: one
+  vehicule_model: MyString
+  serial_number: MyString
+  chassis_number: MyString
+  immatriculation_number: MyString
+  color: MyString
+  manufacture_date: 2020-11-08 09:25:01
+  mileage: MyString
+  statut: MyString
+  geographic_location: MyString
+  user: one
+
+two:
+  uid: MyString
+  vehicule_type: two
+  vehicule_brand: two
+  vehicule_model: MyString
+  serial_number: MyString
+  chassis_number: MyString
+  immatriculation_number: MyString
+  color: MyString
+  manufacture_date: 2020-11-08 09:25:01
+  mileage: MyString
+  statut: MyString
+  geographic_location: MyString
+  user: two

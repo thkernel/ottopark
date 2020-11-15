@@ -1,0 +1,51 @@
+<%= form_with(model: poll, local: false) do |form| %>
+  <div class="modal-body">
+      <ul class="errors">
+      </ul>
+ 
+
+  <div class="form-group">
+    <%= form.label :poll_category_id, "Catégorie", class: "required" %>
+    <%= form.collection_select(:poll_category_id, @poll_categories, :id, :name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
+
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title, "Titre", class: "required" %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Titre", required: true %>
+  </div>
+
+ 
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= form.label :start_date, "Date début", class: "required" %>
+      <%= form.date_field :start_date , class: "form-control", required: true %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :end_date, "Date fin", class: "required" %>
+      <%= form.date_field :end_date , class: "form-control", required: true %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.label :content, "Contenu" %>
+    <%= form.cktext_area :content, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :status, "Statut", class: "required" %>
+    <%= form.select :status, POLL_STATUSES, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cover %>
+    <%= form.file_field :cover, class: "form-control" %>
+  </div>
+
+  
+ </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

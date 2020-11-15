@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vehicule:</strong>
+  <%= @technical_visit.vehicule %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @technical_visit.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @technical_visit.end_date %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @technical_visit.reference %>
+</p>
+
+<p>
+  <strong>Pre tax amount:</strong>
+  <%= @technical_visit.pre_tax_amount %>
+</p>
+
+<p>
+  <strong>Vat rate:</strong>
+  <%= @technical_visit.vat_rate %>
+</p>
+
+<p>
+  <strong>Amount including tax:</strong>
+  <%= @technical_visit.amount_including_tax %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @technical_visit.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @technical_visit.user %>
+</p>
+
+<%= link_to 'Edit', edit_technical_visit_path(@technical_visit) %> |
+<%= link_to 'Back', technical_visits_path %>

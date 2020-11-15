@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @consumption.uid %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @consumption.vehicle %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @consumption.driver %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @consumption.quantity %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @consumption.unit %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @consumption.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @consumption.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @consumption.user %>
+</p>
+
+<%= link_to 'Edit', edit_consumption_path(@consumption) %> |
+<%= link_to 'Back', consumptions_path %>
