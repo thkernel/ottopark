@@ -7,7 +7,7 @@
 #  login                  :string
 #  slug                   :string
 #  role_id                :bigint           not null
-#  created_by             :integer
+#  owner                  :integer
 #  status                 :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
@@ -48,6 +48,13 @@ class User < ApplicationRecord
   # Relationships
   belongs_to :role
   has_one  :profile, dependent: :destroy
+  has_many  :vehicle_types, dependent: :destroy
+  has_many  :vehicle_models, dependent: :destroy
+  has_many  :vehicles, dependent: :destroy
+  has_many  :manufacturers, dependent: :destroy
+  has_many  :parks, dependent: :destroy
+
+
   
 
   # Add nested attributes for profile.

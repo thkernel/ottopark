@@ -1,0 +1,56 @@
+<%= form_with(model: vehicle, local: false) do |form| %>
+  
+
+  <div class="modal-body">
+    <ul class="errors">
+    </ul>
+  
+  <div class="form-group">
+    <%= form.label :vehicle_model_id, "Modèle de véhicule", class: "required" %>
+    <%= form.collection_select(:vehicle_model_id, @vehicle_models, :id, :name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
+  </div>
+
+  <div class="form-group">
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :chassis_number %>
+    <%= form.text_field :chassis_number %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :immatriculation_number %>
+    <%= form.text_field :immatriculation_number %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+
+  
+
+  <div class="form-group">
+    <%= form.label :mileage %>
+    <%= form.text_field :mileage %>
+  </div>
+
+ <div class="form-group">
+    <%= form.label :driver_id, "Chauffeur", class: "required" %>
+    <%= form.collection_select(:driver_id, @drivers, :user_id, :full_name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
+  </div>
+
+  <div class="form-group">
+    <%= form.label :park_id, "Parc", class: "required" %>
+      <%= form.collection_select(:park_id, @parks, :id, :name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
+
+  </div>
+</div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+ 
+<% end %>

@@ -15,6 +15,7 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
       t.string :statut
 
       t.references :park, foreign_key: true
+      t.references :driver, index: true
       t.references :user, foreign_key: true
 
       t.timestamps

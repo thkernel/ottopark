@@ -1,29 +1,75 @@
 Rails.application.routes.draw do
-  resources :expenses
-  resources :expense_types
-  resources :maintenances
-  resources :consumptions
-  resources :intervention_types
-  resources :maintenance_types
-  resources :vehicle_models
-  resources :odometers
-  resources :shiftings
-  resources :vehicle_stickers
-  resources :sites
-  resources :technical_visits
-  resources :insurances
-  resources :insurers
-  resources :incidents
-  resources :parks
-  resources :vehicles
-  resources :vehicle_brands
-  resources :vehicle_types
+  resources :expenses do   
+    get "delete" 
+  end
+  resources :expense_types do   
+    get "delete" 
+  end
+  resources :maintenances do   
+    get "delete" 
+  end
+  resources :consumptions do   
+    get "delete" 
+  end
+  resources :intervention_types do   
+    get "delete" 
+  end
+  resources :maintenance_types do   
+    get "delete" 
+  end
+  resources :vehicle_models do   
+    get "delete" 
+  end
+  resources :odometers do   
+    get "delete" 
+  end
+  resources :shiftings do   
+    get "delete" 
+  end
+  resources :tax_disks do   
+    get "delete" 
+  end
+  resources :sites do   
+    get "delete" 
+  end
+  resources :technical_visits do   
+    get "delete" 
+  end
+  resources :insurances do   
+    get "delete" 
+  end
+  resources :insurers do   
+    get "delete" 
+  end
+  resources :incidents do   
+    get "delete" 
+  end
+  resources :parks do   
+    get "delete" 
+  end
+  resources :vehicles do   
+    get "delete" 
+  end
+  resources :manufacturers do   
+    get "delete" 
+  end
+  resources :vehicle_types do   
+    get "delete" 
+  end
   resources :profiles
   #devise_for :users
-  resources :permission_items
-  resources :permissions
-  resources :features
-  resources :roles
+  resources :permission_items do   
+    get "delete" 
+  end
+  resources :permissions do   
+    get "delete" 
+  end
+  resources :features do   
+    get "delete" 
+  end
+  resources :roles do   
+    get "delete" 
+  end
   #root to: "front#home"
   get "/dashboard" => "dashboard#index", as: :dashboard
   resources :profiles do   

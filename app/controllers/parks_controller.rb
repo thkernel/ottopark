@@ -1,5 +1,7 @@
 class ParksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_park, only: [:show, :edit, :update, :destroy]
+  layout "dashboard"
 
   # GET /parks
   # GET /parks.json
@@ -14,25 +16,32 @@ class ParksController < ApplicationController
 
   # GET /parks/new
   def new
+    role_ids = Role.where("name NOT IN (?)", ["superuser"]).map {|role| role.id}
+    @recipients = User.where("role_id IN (?)", role_ids).map {|user| user.profile }
     @park = Park.new
   end
 
   # GET /parks/1/edit
   def edit
+    role_ids = Role.where("name NOT IN (?)", ["superuser"]).map {|role| role.id}
+    @recipients = User.where("role_id IN (?)", role_ids).map {|user| user.profile }
   end
 
   # POST /parks
   # POST /parks.json
   def create
-    @park = Park.new(park_params)
+    @park = current_user.parks.build(park_params)
 
     respond_to do |format|
       if @park.save
+        @parks = Park.all
         format.html { redirect_to @park, notice: 'Park was successfully created.' }
         format.json { render :show, status: :created, location: @park }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @park.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -42,13 +51,20 @@ class ParksController < ApplicationController
   def update
     respond_to do |format|
       if @park.update(park_params)
+        @parks = Park.all
         format.html { redirect_to @park, notice: 'Park was successfully updated.' }
         format.json { render :show, status: :ok, location: @park }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @park.errors, status: :unprocessable_entity }
+        format.js
       end
     end
+  end
+
+  def delete
+    @park = Park.find(params[:park_id])
   end
 
   # DELETE /parks/1
@@ -69,6 +85,6 @@ class ParksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def park_params
-      params.require(:park).permit(:uid, :name, :capacity, :address, :country, :city, :manager, :status, :description, :user)
+      params.require(:park).permit(:name, :capacity, :address, :country, :city, :manager_id, :status, :description)
     end
 end

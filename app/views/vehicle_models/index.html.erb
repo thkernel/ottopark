@@ -1,37 +1,43 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Vehicle Models</h1>
 
-<table>
+<div class="br-pageheader">
+      <nav class="breadcrumb pd-0 mg-0 tx-12">
+        
+        <span class="breadcrumb-item active"><h5>Modèles de véhicle</h5></span>
+      </nav>
+    </div><!-- br-pageheader -->
+<div class="br-pagebody mg-b-30">
+  <div class="br-section-wrapper">
+    <div class="headers mg-b-20">
+        <div class="left-content">
+        </div>
+
+        <div class="text-right">
+            <%= link_to raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), new_vehicle_model_path, class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", remote: true %>
+
+        </div>
+
+    </div>
+
+
+<table id="datatable1" class="table display responsive nowrap">
+
   <thead>
     <tr>
-      <th>Uid</th>
-      <th>Name</th>
-      <th>Manufacturer</th>
-      <th>Vehicle type</th>
-      <th>Status</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      
+      <th>Nom</th>
+      <th>Fabriquant</th>
+      <th>Type</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
-  <tbody>
-    <% @vehicle_models.each do |vehicle_model| %>
-      <tr>
-        <td><%= vehicle_model.uid %></td>
-        <td><%= vehicle_model.name %></td>
-        <td><%= vehicle_model.manufacturer %></td>
-        <td><%= vehicle_model.vehicle_type %></td>
-        <td><%= vehicle_model.status %></td>
-        <td><%= vehicle_model.user %></td>
-        <td><%= link_to 'Show', vehicle_model %></td>
-        <td><%= link_to 'Edit', edit_vehicle_model_path(vehicle_model) %></td>
-        <td><%= link_to 'Destroy', vehicle_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody class="vehicle-models">
+    <%= render "index" %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Vehicle Model', new_vehicle_model_path %>
+</div>
+</div>
+<div id="vehicle-model-modal" class="c-modal modal fade" data-backdrop="static"></div>

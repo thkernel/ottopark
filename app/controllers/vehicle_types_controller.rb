@@ -1,5 +1,7 @@
 class VehicleTypesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_vehicle_type, only: [:show, :edit, :update, :destroy]
+  layout "dashboard"
 
   # GET /vehicle_types
   # GET /vehicle_types.json
@@ -24,15 +26,18 @@ class VehicleTypesController < ApplicationController
   # POST /vehicle_types
   # POST /vehicle_types.json
   def create
-    @vehicle_type = VehicleType.new(vehicle_type_params)
+    @vehicle_type = current_user.vehicle_types.build(vehicle_type_params)
 
     respond_to do |format|
       if @vehicle_type.save
+        @vehicle_types = VehicleType.all
         format.html { redirect_to @vehicle_type, notice: 'Vehicle type was successfully created.' }
         format.json { render :show, status: :created, location: @vehicle_type }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @vehicle_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -42,15 +47,21 @@ class VehicleTypesController < ApplicationController
   def update
     respond_to do |format|
       if @vehicle_type.update(vehicle_type_params)
+        @vehicle_types = VehicleType.all
         format.html { redirect_to @vehicle_type, notice: 'Vehicle type was successfully updated.' }
         format.json { render :show, status: :ok, location: @vehicle_type }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @vehicle_type.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
 
+  def delete
+    @vehicle_type = VehicleType.find(params[:vehicle_type_id])
+  end
   # DELETE /vehicle_types/1
   # DELETE /vehicle_types/1.json
   def destroy
@@ -69,6 +80,6 @@ class VehicleTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vehicle_type_params
-      params.require(:vehicle_type).permit(:uid, :name, :description, :status, :user_id)
+      params.require(:vehicle_type).permit(:name)
     end
 end

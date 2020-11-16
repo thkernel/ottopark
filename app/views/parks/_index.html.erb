@@ -1,0 +1,21 @@
+<% @parks.each do |park| %>
+      <tr>
+        
+        <td><%= park.name %></td>
+        <td><%= park.capacity %></td>
+        <td><%= park.city %></td>
+        <td><%= park.manager %></td>
+       <td>
+	    <div class="action-buttons">
+			<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'),  edit_park_path(park), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), park_delete_path(park), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

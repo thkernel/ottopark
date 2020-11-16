@@ -1,5 +1,5 @@
 require "rake"
-Starnet::Application.load_tasks
+Ottopark::Application.load_tasks
 class UtilitiesController < ApplicationController
     #authorize_resource
     before_action :authenticate_user!

@@ -1,0 +1,20 @@
+<% @vehicle_models.each do |vehicle_model| %>
+    <tr>
+        
+        <td><%= vehicle_model.name %></td>
+        <td><%= vehicle_model.manufacturer %></td>
+        <td><%= vehicle_model.vehicle_type %></td>
+       <td>
+	    <div class="action-buttons">
+			<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'),  edit_vehicle_model_path(vehicle_model), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), vehicle_model_delete_path(vehicle_model), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

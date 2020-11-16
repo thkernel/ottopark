@@ -1,67 +1,52 @@
-<%= form_with(model: park, local: true) do |form| %>
-  <% if park.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(park.errors.count, "error") %> prohibited this park from being saved:</h2>
+<%= form_with(model: park, local: false) do |form| %>
+ 
+<div class="modal-body">
+    <ul class="errors">
+    </ul>
+ 
 
-      <ul>
-      <% park.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-group">
+    <%= form.label :name, "Nom", class: "required" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Nom", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :capacity , "Capacité"%>
+    <%= form.number_field :capacity, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :address, "Adresse" %>
+    <%= form.text_field :address, class: "form-control", placeholder: "Adresse" %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <%= form.label :country, "Pays", class: "required" %>
+      <%= form.text_field :country, class: "form-control", placeholder: "Pays", required: true %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :uid %>
-    <%= form.text_field :uid %>
+    <div class="col-md-6 form-group">
+      <%= form.label :city, "Ville", class: "required" %>
+      <%= form.text_field :city, class: "form-control", placeholder: "Villes", required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :manager_id, "Gérant", class: "required" %>
+    <%= form.collection_select(:manager_id, @recipients, :user_id, :full_name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
   </div>
 
-  <div class="field">
-    <%= form.label :capacity %>
-    <%= form.number_field :capacity %>
+
+
+  <div class="form-group">
+    <%= form.label :description, "Notes" %>
+    <%= form.text_area :description, class: "form-control", placeholder: "Notes" %>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :manager %>
-    <%= form.text_field :manager %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user %>
-    <%= form.text_field :user %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+   </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
   </div>
 <% end %>

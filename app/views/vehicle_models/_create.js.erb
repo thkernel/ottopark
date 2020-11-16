@@ -1,0 +1,11 @@
+$("ul.errors").html("");
+<% if @vehicle_model.errors.any? %>
+  <% @vehicle_model.errors.full_messages.each do |message| %>
+ 
+    $("ul.errors").append($('<div class="c-alert c-alert--danger" > ').html("<%= message.html_safe %> "));
+  <% end %>
+<% else %>
+  $(".vehicle-models").html("<%= escape_javascript(render 'index') %>");
+  $("#vehicle-model-modal").modal("hide");
+ 
+<% end %>

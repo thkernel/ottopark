@@ -29,7 +29,9 @@ unless Role.all.present?
             {name: "guest"},
             {name: "user"},
             {name: "demo"},
-            {name: "driver"}
+            {name: "driver"},
+            {name: "Park manager"}
+
 
             
 

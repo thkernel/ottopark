@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: vehicle_models
+#
+#  id              :bigint           not null, primary key
+#  uid             :string
+#  name            :string
+#  manufacturer    :string
+#  vehicle_type_id :bigint
+#  model_year      :string
+#  status          :string
+#  user_id         :bigint
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class VehicleModel < ApplicationRecord
   belongs_to :vehicle_type
   belongs_to :user
